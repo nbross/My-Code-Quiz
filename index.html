@@ -20,7 +20,7 @@
 
     <main class="bg-dark vh-100">
 
-        <div class="row w-100 justify-content-center align-items-center h-100">
+        <div class="row justify-content-center align-items-center h-100">
             <!-- start card -->
             <div class="card text-center" style="width: 48rem;">
                 <div class="card-body " id="start">
@@ -37,13 +37,16 @@
             <!-- question card -->
             <div hidden class="card" id="questions" style="width: 48rem;">
                 <div class="card-body">
-                    <h2 class="card-text fs-3" id="question-text"></h2>
+                    <h2 class="card-title fs-3" id="question-text"></h2>
 
-                    <div id="question-answers">
-                        <button class="btn btn-danger fs-5 answer-button" id="answer0"></button>
-                        <button class="btn btn-danger fs-5 answer-button" id="answer1"></button>
-                        <button class="btn btn-danger fs-5 answer-button" id="answer2"></button>
-                        <button class="btn btn-danger fs-5 answer-button" id="answer3"></button>
+                    <div id="question-answers d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-danger fs-5 answer-button m-2" type="button" id="answer0"></button>
+                        <br>
+                        <button class="btn btn-danger fs-5 answer-button m-2" type="button" id="answer1"></button>
+                        <br>
+                        <button class="btn btn-danger fs-5 answer-button m-2" type="button" id="answer2"></button>
+                        <br>
+                        <button class="btn btn-danger fs-5 answer-button m-2" type="button" id="answer3"></button>
                     </div>
                     <div id="result">
                         <hr>
