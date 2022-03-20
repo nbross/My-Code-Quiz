@@ -35,12 +35,48 @@
             <!-- end start card -->
 
             <!-- question card -->
+            <div hidden class="card" id="questions" style="width: 48rem;">
+                <div class="card-body">
+                    <h2 class="card-text fs-3" id="question-text"></h2>
+
+                    <div id="question-answers">
+                        <button class="btn btn-danger fs-5" id="answer0"></button>
+                        <button class="btn btn-danger fs-5" id="answer1"></button>
+                        <button class="btn btn-danger fs-5" id="answer2"></button>
+                        <button class="btn btn-danger fs-5" id="answer3"></button>
+                    </div>
+                    <div id="result">
+                        <hr>
+                        <p id="result-text"></p>
+                    </div>
+                </div>
+            </div>
             <!-- end question card-->
 
             <!-- score card -->
+            <div hidden class="card" id="score" style="width: 48rem;">
+                <div class="card-body">
+                    <h2 class="card-title">Congrats! You finish the quiz!</h2>
+                    <p>Your total score is <span id="score-total"></span>.</p>
+                    <form class="">
+                        <label for="initials"></label>
+                        <input type="text" id="initials">
+                        <button class="btn btn-danger" id="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
             <!-- end score card -->
 
             <!-- leader board card -->
+            <div hidden class="card" id="leaderboard">
+                <h2 class="card-title">Leader Board</h2>
+                <ol id="leaderboard-list">
+                </ol>
+                <div>
+                    <button class="btn btn-danger" id="back-button">Go Back</button>
+                    <button class="btn btn-danger" id="clear-button">Clear Leader Board</button>
+                </div>
+            </div>
             <!-- end leader board card -->
 
         </div>
