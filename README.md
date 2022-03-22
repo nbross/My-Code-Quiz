@@ -45,5 +45,5 @@ THEN I can save my initials and score
 
 ## Deployed page
 
-Page published at:
+Page published at: https://nbross.github.io/My-Code-Quiz/
 Git Hub Repo: https://github.com/nbross/My-Code-Quiz
