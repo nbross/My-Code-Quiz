@@ -1,5 +1,5 @@
 // array of all my questions, answers, and correct answers
-var questions = [
+const questions = [
     {
         questionText:"What does HTML stand for?",
         answers:["1. Hyper Text Makeup Language", "2. Hot Tall Mom Legs", "3. High Times Man Laughs", "4. HyperText Markup Language"],
@@ -28,12 +28,12 @@ var questions = [
 ];
 
 // variables declared
-var startCard = document.querySelector("#start");
-var questionCard = document.querySelector("#questions");
-var scoreCard = document.querySelector("#score");
-var leaderboardCard = document.querySelector("#leaderboard");
-var result = document.querySelector("#result")
-var resultText = document.querySelector("result-text")
+const startCard = document.querySelector("#start");
+const questionCard = document.querySelector("#questions");
+const scoreCard = document.querySelector("#score");
+const leaderboardCard = document.querySelector("#leaderboard");
+const result = document.querySelector("#result")
+const resultText = document.querySelector("result-text")
 
 // function for cards to hide
 function hideCards() {
@@ -84,7 +84,7 @@ function countdown() {
 }
 
 //display time on page
-var timeDisplay = document.querySelector("#time");
+const timeDisplay = document.querySelector("#time");
 function displayTime() {
     timeDisplay.textContent = time;
 }
@@ -102,4 +102,42 @@ function displayQuestion() {
         let answerButton = document.querySelector("#answer" + i);
         answerButton.textContent = answer;
     }
+}
+
+document.querySelector("#question-answers").addEventListener("click", checkAnswer);
+
+function checkAnswer(eventObject) {
+    let answerButton = eventObject.target;
+    result.style.display = "block";
+    if (answerIsCorrect(answerButton)) {
+        resultText.textContent = "Correct!";
+        setTimeout(hideResultText, 1000);
+    } else {
+        resultText.textContent = "Incorrect!";
+        setTimeout(hideResultText, 1000);
+        if (time >= 10) {
+            time = time - 10;
+            displayTime();
+        } else {
+        time = 0;
+        displayTime();
+        endQuiz();
+        }
+    }
+
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+        displayQuestion();
+    } else {
+        endQuiz();
+    }
+}
+
+function answerIsCorrect(answerButton) {
+    return answerButton.textContent === questions[currentQuestion].answer;
+}
+
+function endQuiz() {
+    clearInterval(intervalID);
+    hideCards();
 }
